@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+
+    tools:context="com.example.hjc.represent.crlist">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:text="congressional representatives"/>
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="220dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="30dp"
+                android:id="@+id/crlist_b1"
+                android:onClick="cr1"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/crpic1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/crname1"
+                    android:text=""/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/crlist_b2"
+                android:padding="30dp"
+                android:onClick="cr2"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/crpic2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/crname2"
+                    android:text=""/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="30dp"
+                android:id="@+id/crlist_b3"
+                android:onClick="cr3"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/crpic3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/crname3"
+                    android:text=""/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="10sp"
+            android:onClick="vote"
+            android:text="vote"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
