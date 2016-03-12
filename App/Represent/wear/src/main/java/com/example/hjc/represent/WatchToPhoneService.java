@@ -45,7 +45,7 @@ public class WatchToPhoneService extends Service {
         Bundle extras = intent.getExtras();
         final String sendinfo = extras.getString("SEND");
 
-        final int send = intent.getIntExtra(sendinfo, 0);
+        final String send = intent.getStringExtra(sendinfo);
 
 
         new Thread(new Runnable() {
@@ -54,7 +54,7 @@ public class WatchToPhoneService extends Service {
 
                 mApiClient.connect();
 
-                sendMessage(sendinfo, Integer.toString(send));
+                sendMessage(sendinfo, send);
             }
         }).start();
 

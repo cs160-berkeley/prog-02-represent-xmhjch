@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class vote extends Activity {
-    public static int zip;
+    public static String zip;
     public static String[] location;
     public static String[] vote;
 
@@ -29,7 +29,7 @@ public class vote extends Activity {
         setContentView(R.layout.activity_vote);
 
         Intent intent = getIntent();
-        zip = intent.getIntExtra("zipcode", 0);
+        zip = intent.getStringExtra("zipcode");
         location = countystate(zip);
         vote = vote(zip);
         TextView left = (TextView) findViewById(R.id.rpercent);
@@ -64,27 +64,21 @@ public class vote extends Activity {
                 Integer random = choice.get(randomizer.nextInt(choice.size()));
                 Intent intent = new Intent(getBaseContext(), WatchToPhoneService.class);
                 intent.putExtra("SEND", "zipcode");
-                intent.putExtra("zipcode", random);
+                intent.putExtra("zipcode", "94720");
                 startService(intent);
             }
         });
 
     }
-    public String[] countystate(int zipcode){
+    public String[] countystate(String zipcode){
         String[] temp = {"Alameda", "California"};
-        String[] temp1 = {"Middlesex", "New Jersey"};
-        if (zipcode!= 94720){
-            return temp1;
-        }
+
         return temp;
     }
 
-    public String[] vote(int zipcode){
-        String[] temp = {"30", "70"};
-        String[] temp1 = {"61", "39"};
-        if (zipcode != 94720){
-            return temp1;
-        }
+    public String[] vote(String zipcode){
+        String[] temp = {"18.7", "78.5"};
+
         return temp;
     }
 

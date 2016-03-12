@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +8,7 @@
     tools:context="com.example.hjc.represent.Home"
 
     android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +21,7 @@
             android:layout_height="60dp"
             android:gravity="center"
             android:textSize="30sp"
-            android:text="2012" />
+            android:text="2 0 1 2" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -30,15 +32,21 @@
     </LinearLayout>
 
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="10">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="zip code"
+            android:padding="21dp"
+            android:background="#333399"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
             android:id="@+id/home_b1"
             android:onClick="enter"/>
 
@@ -46,6 +54,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="my location"
+            android:padding="22dp"
+            android:background="#cc3333"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
             android:onClick="get_location"
             android:id="@+id/home_b2"/>
 

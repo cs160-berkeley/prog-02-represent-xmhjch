@@ -20,7 +20,7 @@ public class enterlocation extends Activity {
         String zip = zipcode.getText().toString();
         int zip_code_num = Integer.parseInt(zip);
 
-        intent.putExtra("Zipcode", zip_code_num);
+        intent.putExtra("Zipcode", zip);
         startActivity(intent);
 
     }

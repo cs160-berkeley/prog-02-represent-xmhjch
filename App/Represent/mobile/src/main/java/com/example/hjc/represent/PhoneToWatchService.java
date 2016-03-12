@@ -42,7 +42,7 @@ public class PhoneToWatchService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        final int zip = intent.getIntExtra("zipcode", 0);
+        final String zip = intent.getStringExtra("zipcode");
 
 
         new Thread(new Runnable() {
@@ -51,7 +51,7 @@ public class PhoneToWatchService extends Service {
 
                 mApiClient.connect();
 
-                sendMessage("zipcode", Integer.toString(zip));
+                sendMessage("zipcode", zip);
             }
         }).start();
 

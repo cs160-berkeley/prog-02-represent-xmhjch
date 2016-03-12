@@ -54,12 +54,42 @@ public class moreinfo extends Activity {
 
     public List<String[]> findmoreinfo(String name){
         List<String[]> temp = new ArrayList<String[]>();
-        String[] temp1 = {"United States House of Representatives", "(2011-2013)", "House Majority Whip", "(2011-2013)"};
-        String[] temp2 = {"United States House of Representatives", "(1995-2011)"};
-        String[] temp3 = {"Education Bill 2013"};
+        String[] temp1 = {"Member of the U.S. House of Representatives"};
+        String[] temp2 = {"Member of the California State Assembly", "December 7, 1992 – November 30, 1996"};
+        String[] temp3 = {""};
+
         temp.add(temp1);
         temp.add(temp2);
         temp.add(temp3);
-        return temp;
+
+
+        List<String[]> temp0 = new ArrayList<String[]>();
+        String[] temp01 = {"Chairwoman of the Senate Environment Committee", "January 3, 2007 – January 3, 2015"};
+        String[] temp02 = {"Member of the U.S. House of Representatives", "January 3, 1983 – January 3, 1993"};
+        String[] temp03 = {"HIV Organ Policy Equity Act (S. 330; 113th Congress)"};
+
+        temp0.add(temp01);
+        temp0.add(temp02);
+        temp0.add(temp03);
+
+
+        List<String[]> tem1 = new ArrayList<String[]>();
+        String[] temp11 = {"Chairman of the Senate Intelligence Committee", "January 3, 2009 – January 3, 2015"};
+        String[] temp12 = {"Chairman of the Senate Rules Committee", "January 3, 2007 – January 3, 2009", "38th Mayor of San Francisco", "December 4, 1978 – January 8, 1988"};
+        String[] temp13 = {"Fisa Improvements Act bill 2013"};
+
+        tem1.add(temp11);
+        tem1.add(temp12);
+        tem1.add(temp13);
+
+
+
+        if (name.equals("Barbara Lee")){
+            return temp;
+        }else if(name.equals("Barbara Boxer")){
+            return tem1;
+        }else{
+            return temp0;
+        }
     }
 }

@@ -16,24 +16,22 @@ import java.nio.charset.StandardCharsets;
 
 public class PhoneListenerService extends WearableListenerService {
 
-    public static int crname;
+    public static String crname;
 
     @Override
     public void onMessageReceived(MessageEvent messageEvent) {
         Log.d("T", "in PhoneListenerService, got: " + messageEvent.getPath());
         if( messageEvent.getPath().equalsIgnoreCase("crname")){
             String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
-            crname = Integer.parseInt(value);
             Intent intent = new Intent(this, crinfo.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("crname",crlist.crlist.get(crname)[0]);
+            intent.putExtra("crname",crlist.crl.get(Integer.parseInt(value))[0]);
             startActivity(intent);
         } else{
             String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
-            crname = Integer.parseInt(value);
             Intent intent = new Intent(this, crlist.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("zip",crname);
+            intent.putExtra("zip",value);
             startActivity(intent);
         }
 

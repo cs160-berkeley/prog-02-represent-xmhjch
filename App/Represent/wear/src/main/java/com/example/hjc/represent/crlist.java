@@ -16,8 +16,8 @@ import java.util.List;
 public class crlist extends Activity{
 
 
-    public static int zip;
-    public static List<String[]> crlist = new ArrayList<String[]>();
+    public static String zip;
+    public static List<String[]> crl = new ArrayList<String[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,74 +33,77 @@ public class crlist extends Activity{
         ll3.setVisibility(View.INVISIBLE);
 
         Intent intent=getIntent();
-        zip = intent.getIntExtra("zipcode", 0);
-        crlist = findlist(zip);
+        zip = intent.getStringExtra("zipcode");
+        crl = findlist(zip);
 
 
-        int crlen = crlist.size();
+        int crlen = crl.size();
 
         if (crlen > 0){
             ImageView pic1 = (ImageView) findViewById(R.id.crpic1);
             TextView name1 = (TextView) findViewById(R.id.crname1);
-            name1.append(crlist.get(0)[0]);
-            if (crlist.get(0)[1] == "D"){
-                ll1.setBackgroundColor(Color.BLUE);
+            name1.setText(crl.get(0)[0]);
+            if (crl.get(0)[1] == "D"){
+                ll1.setBackgroundColor(0xFF333399);
+            }else if(crl.get(0)[1] == "R"){
+                ll1.setBackgroundColor(0xFFcc3333);
             }else{
-                ll1.setBackgroundColor(Color.RED);
+                ll1.setBackgroundColor(0xFF4ed93f);
             }
             ll1.setVisibility(View.VISIBLE);
-            int id = getResources().getIdentifier(crlist.get(0)[2], "drawable", getPackageName());
+            int id = getResources().getIdentifier(crl.get(0)[2], "drawable", getPackageName());
             Drawable drawable = getDrawable(id);
             pic1.setImageDrawable(drawable);
-            //pic1.setImageResource(R.drawable.loginbtn);
         }
 
         if (crlen > 1){
             ImageView pic2 = (ImageView) findViewById(R.id.crpic2);
             TextView name2 = (TextView) findViewById(R.id.crname2);
-            name2.append(crlist.get(1)[0]);
-            if (crlist.get(1)[1] == "D"){
-                ll2.setBackgroundColor(Color.BLUE);
+            name2.setText(crl.get(1)[0]);
+            if (crl.get(1)[1] == "D"){
+                ll2.setBackgroundColor(0xFF333399);
+            }else if(crl.get(1)[1] == "R"){
+                ll2.setBackgroundColor(0xFFcc3333);
             }else{
-                ll2.setBackgroundColor(Color.RED);
+                ll2.setBackgroundColor(0xFF4ed93f);
             }
             ll2.setVisibility(View.VISIBLE);
-            int id = getResources().getIdentifier(crlist.get(1)[2], "drawable", getPackageName());
+            int id = getResources().getIdentifier(crl.get(1)[2], "drawable", getPackageName());
             Drawable drawable = getDrawable(id);
             pic2.setImageDrawable(drawable);
-            //pic2.setImageResource(R.drawable.loginbtn);
         }
 
         if (crlen > 2){
             ImageView pic3 = (ImageView) findViewById(R.id.crpic3);
             TextView name3 = (TextView) findViewById(R.id.crname3);
-            name3.append(crlist.get(2)[0]);
-            if (crlist.get(2)[1] == "D"){
-                ll3.setBackgroundColor(Color.BLUE);
+            name3.setText(crl.get(2)[0]);
+            if (crl.get(2)[1] == "D"){
+                ll3.setBackgroundColor(0xFF333399);
+            }else if(crl.get(2)[1] == "R"){
+                ll3.setBackgroundColor(0xFFcc3333);
             }else{
-                ll3.setBackgroundColor(Color.RED);
+                ll3.setBackgroundColor(0xFF4ed93f);
             }
             ll3.setVisibility(View.VISIBLE);
-            int id = getResources().getIdentifier(crlist.get(2)[2], "drawable", getPackageName());
+            int id = getResources().getIdentifier(crl.get(2)[2], "drawable", getPackageName());
             Drawable drawable = getDrawable(id);
             pic3.setImageDrawable(drawable);
-            //pic3.setImageResource(R.drawable.loginbtn);
         }
 
     }
 
-    public List<String[]> findlist(int zipcode){
+    public List<String[]> findlist(String zipcode){
         List<String[]> temp = new ArrayList<String[]>();
-        List<String[]> temp0 = new ArrayList<String[]>();
-        String[] temp1 = {"Frank Underwood", "D", "cr1"};
-        String[] temp2 = {"Hector Mendoza", "R", "cr2"};
-        String[] temp3 = {"Peter Russo", "D", "cr3"};
-        temp.add(temp1);
-        temp.add(temp2);
-        temp0.add(temp3);
-        if (zipcode!=94720){
-            return temp0;
-        }
+
+        String[] t1 = {"Barbara Lee", "D", "qk_bigger", "L000551"};
+        String[] t2 = {"Barbara Boxer", "D", "pmp_bigger", "B000711"};
+        String[] t3 = {"Dianne Feinstein", "D", "ez8_bigger", "F000062"};
+        temp.add(t1);
+        temp.add(t2);
+        temp.add(t3);
+
+
+
 
         return temp;
     }
@@ -109,21 +112,21 @@ public class crlist extends Activity{
     public void cr1(View view){
         Intent intent = new Intent(getBaseContext(), WatchToPhoneService.class);
         intent.putExtra("SEND", "crname");
-        intent.putExtra("crname", 0);
+        intent.putExtra("crname", "0");
         startService(intent);
     }
 
     public void cr2(View view){
         Intent intent = new Intent(getBaseContext(), WatchToPhoneService.class);
         intent.putExtra("SEND", "crname");
-        intent.putExtra("crname", 1);
+        intent.putExtra("crname", "1");
         startService(intent);
     }
 
     public void cr3(View view){
         Intent intent = new Intent(getBaseContext(), WatchToPhoneService.class);
         intent.putExtra("SEND", "crname");
-        intent.putExtra("crname", 2);
+        intent.putExtra("crname", "2");
         startService(intent);
     }
 

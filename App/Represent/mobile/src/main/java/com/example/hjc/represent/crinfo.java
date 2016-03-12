@@ -47,19 +47,19 @@ public class crinfo extends Activity {
     public List<String[]> findinfo(String name){
         List<String[]> temp = new ArrayList<String[]>();
         String[] temp1 = {"Democrat"};
-        String[] temp2 = {"Underwood@house.gov", "12345678"};
-        String[] temp3 = {"Please don't text and drive near the #peachoid"};
-        String[] temp4 = {"cr1"};
+        String[] temp2 = {"Rep.Lee@opencongress.org", "202-225-2661"};
+        String[] temp3 = {"On #InternationalWomensDay & every day, Congress must work to advance #humanrights and justice. We deserve #equality."};
+        String[] temp4 = {"qk_bigger"};
         temp.add(temp1);
         temp.add(temp2);
         temp.add(temp3);
         temp.add(temp4);
 
         List<String[]> temp0 = new ArrayList<String[]>();
-        String[] temp01 = {"Republican"};
-        String[] temp02 = {"Mendoza@house.gov", "562562254"};
-        String[] temp03 = {"president 2016"};
-        String[] temp04 = {"cr2"};
+        String[] temp01 = {"Democrat"};
+        String[] temp02 = {"Sen.Boxer@opencongress.org", "202-224-3553"};
+        String[] temp03 = {"Today I was pleased to introduce a bill to provide assistance to our crab fishing communities. "};
+        String[] temp04 = {"pmp_bigger"};
         temp0.add(temp01);
         temp0.add(temp02);
         temp0.add(temp03);
@@ -67,18 +67,18 @@ public class crinfo extends Activity {
 
         List<String[]> tem1 = new ArrayList<String[]>();
         String[] temp11 = {"Democrat"};
-        String[] temp12 = {"P.Russo@house.gov", "23245678"};
-        String[] temp13 = {"----------"};
-        String[] temp14 = {"cr3"};
+        String[] temp12 = {"Sen.Feinstein@opencongress.org", "202-224-3841"};
+        String[] temp13 = {"I’m asking Senate Republicans to #DoYourJob and give a #SCOTUS nominee careful consideration. http://youtu.be/Gnj75bbDZz8 "};
+        String[] temp14 = {"ez8_bigger"};
         tem1.add(temp11);
         tem1.add(temp12);
         tem1.add(temp13);
         tem1.add(temp14);
 
 
-        if (name.equals("Frank Underwood")){
+        if (name.equals("Barbara Lee")){
             return temp;
-        }else if(name.equals("Peter Russo")){
+        }else if(name.equals("Barbara Boxer")){
             return tem1;
         }else{
             return temp0;

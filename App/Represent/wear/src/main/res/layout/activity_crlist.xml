@@ -13,11 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:gravity="center"
-            android:text="congressional representatives"/>
+            android:background="#aaaaaa"
+            android:text=""/>
 
 
     </LinearLayout>
@@ -34,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="30dp"
+                android:padding="20dp"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/crlist_b1"
                 android:onClick="cr1"
                 android:clickable="true"
@@ -50,7 +52,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/crname1"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
                     android:text=""/>
             </LinearLayout>
 
@@ -59,7 +64,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:id="@+id/crlist_b2"
-                android:padding="30dp"
+                android:padding="20dp"
+                android:layout_marginBottom="10dp"
                 android:onClick="cr2"
                 android:clickable="true"
                 android:focusable="true">
@@ -74,7 +80,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/crname2"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
                     android:text=""/>
             </LinearLayout>
 
@@ -82,7 +91,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="30dp"
+                android:padding="20dp"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/crlist_b3"
                 android:onClick="cr3"
                 android:clickable="true"
@@ -98,7 +108,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/crname3"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
                     android:text=""/>
             </LinearLayout>
 
